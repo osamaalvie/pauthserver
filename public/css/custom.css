@@ -1,50 +1,45 @@
-html, body {
-    background-color: #000;
-    color: #636b6f;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 200;
-    height: 100vh;
-    margin: 0;
+
+.navbar-expand-md
+{
+    background-color: #990033;
 }
 
-.full-height {
-    height: 100vh;
+#navbarSupportedContent, #navbarSupportedContainer a{
+    color: white;
+    font-family: BRADHITC;
+    font-size: 22px;
+    font-weight: 900;
 }
 
-.flex-center {
-    align-items: center;
-    display: flex;
-    justify-content: center;
+#navbarSupportedContent, #navbarSupportedContainer a:hover{
+    color: black;
 }
 
-.position-ref {
-    position: relative;
+#navbarSupportedContent .dropdown-menu{
+    background-color: #990033;
+}
+#navbarSupportedContent .dropdown-item{
+    background-color: #990033;
 }
 
-.top-right {
-    position: absolute;
-    right: 10px;
-    top: 18px;
+@font-face {
+    font-family: BRADHITC;
+    src: url('/fonts/BRADHITC.TTF');
 }
 
-.content {
-    text-align: center;
+.mdl-button--raised.mdl-button--colored {
+    background: #990033;
+    color: #fff;
 }
 
-.title {
-    font-size: 84px;
+.dataTable > thead {
+    background-color: #990033;
 }
 
-.links > a {
-    color: #636b6f;
-    padding: 0 25px;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: .1rem;
-    text-decoration: none;
-    text-transform: uppercase;
+.dataTable > thead > tr > th {
+
+    color: white;
 }
 
-.m-b-md {
-    margin-bottom: 30px;
-}
+
+

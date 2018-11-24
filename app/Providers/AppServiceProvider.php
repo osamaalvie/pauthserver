@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Http\Middleware\XSSProtection;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Illuminate\Routing\Router;
 use Laravel\Passport\Passport;
 use Illuminate\Support\Facades\Gate;
 
@@ -21,10 +23,10 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(Router $router)
     {
         $this->registerPolicies();
-
+        $router->aliasMiddleware('XSSProtection', XSSProtection::class);
         Passport::routes();
     }
 

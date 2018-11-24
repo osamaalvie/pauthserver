@@ -11,8 +11,46 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
+#===========================================================#
+### PUBLIC ROUTES START ###
+#===========================================================#
+
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+### PUBLIC ROUTES END ###
+#===========================================================#
+
+#===========================================================#
+### AUTHENTICATED ROUTES START ###
+#===========================================================#
+Route::group(['middleware' => 'web'],
+    function () {
+
+        Route::group(['middleware' => 'admin'], function () {
+            Route::get('/', 'AdminController@adminPanel');
+            Route::get('/admin_panel', 'AdminController@adminPanel')->name('admin_panel');
+        });
+
+        Route::group(['middleware' => 'client'], function () {
+            Route::get('/', 'UserController@dashboard');
+            Route::get('/dashboard', 'UserController@dashboard')->name('dashboard');
+        });
+
+
+    });
+
+Route::group(['middleware' => 'XSSProtection'], function () {
+
+
+});
+
+#===========================================================#
+### AUTHENTICATED ROUTES END ###
+#===========================================================#
+
+
+
+
+
+
